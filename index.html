@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YNBN Website</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -45,6 +46,9 @@
         nav a:hover, nav a.active {
             background-color: #007bff;
             color: white;
+        }
+        nav i {
+            margin-right: 8px; /* Abstand zwischen Symbol und Text */
         }
         .content {
             padding: 30px 40px;
@@ -179,9 +183,9 @@
 </header>
 
 <nav>
-    <a href="#home" class="nav-link" data-target="home">Home</a>
-    <a href="#team" class="nav-link" data-target="team">Team</a>
-    <a href="#links" class="nav-link" data-target="links">Links</a>
+    <a href="#home" class="nav-link" data-target="home"><i class="fas fa-home"></i>Home</a>
+    <a href="#team" class="nav-link" data-target="team"><i class="fas fa-users"></i>Team</a>
+    <a href="#links" class="nav-link" data-target="links"><i class="fas fa-link"></i>Links</a>
 </nav>
 
 <div class="content" id="home">
