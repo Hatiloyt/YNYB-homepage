@@ -6,42 +6,62 @@
     <title>YNBN Website</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f9f9f9;
+            color: #333;
         }
         header {
-            background-color: #333;
+            background-color: #2d2d2d;
             color: white;
-            padding: 10px 20px;
+            padding: 20px 30px;
             text-align: center;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        header img {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 130px;
+            height: auto;
         }
         nav {
             background-color: #444;
-            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         nav a {
             color: white;
-            padding: 14px 20px;
+            padding: 16px 30px;
             display: inline-block;
             text-decoration: none;
             text-align: center;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
-        nav a:hover {
-            background-color: #575757;
+        nav a:hover, nav a.active {
+            background-color: #007bff;
+            color: white;
         }
         .content {
-            padding: 20px;
+            padding: 30px 40px;
             display: none;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            border-radius: 10px;
+            max-width: 1100px;
         }
         .content.active {
             display: block;
         }
         footer {
             text-align: center;
-            padding: 10px;
-            background-color: #333;
+            padding: 15px;
+            background-color: #2d2d2d;
             color: white;
             position: fixed;
             width: 100%;
@@ -49,53 +69,112 @@
         }
         .category {
             margin-bottom: 30px;
-            padding: 15px;
-            border-radius: 8px;
+            padding: 20px;
+            border-radius: 10px;
             color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         .category h3 {
-            padding: 10px;
+            padding: 12px;
             margin: 0;
-            font-size: 1.5em;
+            font-size: 1.6em;
+            text-align: center;
         }
         .category ul {
             list-style-type: none;
             padding: 0;
         }
         .category li {
-            background-color: #e4e4e4;
-            margin: 5px 0;
-            padding: 8px;
-            border-radius: 5px;
-            color: black; /* Teamnamen schwarz anzeigen */
+            background-color: #f1f1f1;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 8px;
+            color: black; /* Textfarbe auf schwarz gesetzt */
+            transition: background-color 0.3s ease;
         }
-        /* Farben für Kategorien */
-        .Owners {
-            background-color: #ffcc00;
+        .category li:hover {
+            background-color: #ddd;
         }
-        .Admins {
-            background-color: #870000;
-        }
-        .Developers {
-            background-color: #003bff;
-        }
-        .Mods {
-            background-color: #ff0000;
-        }
-        .Supporters {
-            background-color: #800077;
-        }
+        .Owners { background-color: #ffcc00; }
+        .Admins { background-color: #870000; }
+        .Developers { background-color: #003bff; }
+        .Mods { background-color: #ff0000; }
+        .Supporters { background-color: #800077; }
 
         .image-link {
             display: block;
             margin: 20px auto;
-            max-width: 1000px;
+            max-width: 900px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        .image-link:hover {
+            transform: scale(1.05);
+        }
+
+        #links {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        #links h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        #links ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        #links ul li {
+            background-color: #f0f0f0;
+            margin: 15px 0;
+            padding: 12px;
+            border-radius: 5px;
+            text-align: center;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        #links ul li a {
+            color: #333;
+            text-decoration: none;
+            font-size: 1.2em;
+            display: block;
+            padding: 8px;
+        }
+        #links ul li a:hover {
+            color: #fff;
+            background-color: #007bff;
+            padding: 12px;
+            border-radius: 5px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            header img {
+                width: 60px;
+                left: 15px;
+            }
+            nav a {
+                padding: 12px 18px;
+            }
+            .content {
+                padding: 20px 30px;
+            }
+            .category {
+                padding: 15px;
+            }
+            #links h2 {
+                font-size: 2em;
+            }
         }
     </style>
 </head>
+<link rel="shortcut icon" type="image/x-icon" href="YNYB Logo.png">
 <body>
 
 <header>
+    <img src="YNYB Logo.png" alt="Logo">
     <h1>Welcome to the YNBN Website</h1>
 </header>
 
@@ -105,13 +184,12 @@
     <a href="#links" class="nav-link" data-target="links">Links</a>
 </nav>
 
-<div class="content" id="home" class="active">
+<div class="content" id="home">
     <h2>Home</h2>
     <p>Welcome to the You Need You Become Community!</p>
     <p>If you need help, tips, or new teammates for Minecraft or Fortnite, you've come to the right place.</p>
     <p>Join our Discord server to do all of this. Enjoy!</p>
     <p>Click on this image!</p>
-    <!-- Bildlink -->
     <a href="https://discord.gg/HcNNFYmrhf" target="_blank">
         <img src="YNYB Logo.png" alt="Join our Discord" class="image-link">
     </a>
@@ -119,7 +197,7 @@
 
 <div class="content" id="team">
     <h2>Team</h2>
-    <p>Our team consists of friendly, committed and experienced people.</p>
+    <p>Our team consists of friendly, committed, and experienced people.</p>
 
     <div class="category Owners">
         <h3>Owners</h3>
@@ -170,7 +248,7 @@
         <li><a href="https://www.minecraft.net/" target="_blank">Minecraft Official Website</a></li>
         <li><a href="https://www.epicgames.com/fortnite/" target="_blank">Fortnite Official Website</a></li>
         <li><a href="https://hatiloyt.github.io/hatilo.yt.github.io/" target="_blank">Hatilo's Website</a></li>
-
+        <li><a href="https://lkatze22.github.io/index.html" target="_blank">LKatze's Website</a></li>
     </ul>
 </div>
 
@@ -191,7 +269,6 @@
         });
     });
 
-    // Standardmäßig Home aktivieren
     document.getElementById('home').classList.add('active');
 </script>
 
