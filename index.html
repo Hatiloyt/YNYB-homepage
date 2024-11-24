@@ -12,7 +12,11 @@
             padding: 0;
             background-color: #f9f9f9;
             color: #333;
+            overflow-x: hidden;
+            animation: fadeIn 1s ease-out; /* Animation beim Laden */
         }
+
+        /* Header mit Fade-In Animation */
         header {
             background-color: #2d2d2d;
             color: white;
@@ -20,7 +24,9 @@
             text-align: center;
             position: relative;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: slideIn 0.8s ease-out; /* Animation für Header */
         }
+
         header img {
             position: absolute;
             top: 20px;
@@ -28,12 +34,16 @@
             width: 130px;
             height: auto;
         }
+
+        /* Navigation mit Fade-In */
         nav {
             background-color: #444;
             display: flex;
             justify-content: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.5s ease-out; /* Animation für Navigation */
         }
+
         nav a {
             color: white;
             padding: 16px 30px;
@@ -43,13 +53,17 @@
             font-size: 1.1em;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
+
         nav a:hover, nav a.active {
             background-color: #007bff;
             color: white;
         }
+
         nav i {
             margin-right: 8px; /* Abstand zwischen Symbol und Text */
         }
+
+        /* Animation für Inhalte */
         .content {
             padding: 30px 40px;
             display: none;
@@ -58,10 +72,16 @@
             margin: 20px auto;
             border-radius: 10px;
             max-width: 1100px;
+            opacity: 0; /* Startet unsichtbar */
+            transform: translateY(50px); /* Startet nach unten verschoben */
+            animation: fadeInUp 1s ease-out forwards; /* Animation für Content */
         }
+
         .content.active {
             display: block;
         }
+
+        /* Footer */
         footer {
             text-align: center;
             padding: 15px;
@@ -71,39 +91,79 @@
             width: 100%;
             bottom: 0;
         }
+
+        /* Kategorie Boxen */
         .category {
             margin-bottom: 30px;
             padding: 20px;
             border-radius: 10px;
             color: white;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            opacity: 0; /* Startet unsichtbar */
+            transform: translateY(50px); /* Startet nach unten verschoben */
+            animation: fadeInUp 1s ease-out forwards; /* Animation für Kategorien */
         }
+
         .category h3 {
             padding: 12px;
             margin: 0;
             font-size: 1.6em;
             text-align: center;
         }
+
         .category ul {
             list-style-type: none;
             padding: 0;
         }
+
         .category li {
             background-color: #f1f1f1;
             margin: 10px 0;
             padding: 10px;
             border-radius: 8px;
-            color: black; /* Textfarbe auf schwarz gesetzt */
+            color: black;
             transition: background-color 0.3s ease;
         }
+
         .category li:hover {
             background-color: #ddd;
         }
+
         .Owners { background-color: #ffcc00; }
         .Admins { background-color: #870000; }
         .Developers { background-color: #003bff; }
         .Mods { background-color: #ff0000; }
         .Supporters { background-color: #800077; }
+
+        /* Animationen */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
         .image-link {
             display: block;
@@ -112,6 +172,7 @@
             border-radius: 8px;
             transition: transform 0.3s ease;
         }
+
         .image-link:hover {
             transform: scale(1.05);
         }
@@ -122,15 +183,18 @@
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
+
         #links h2 {
             font-size: 2.5em;
             margin-bottom: 20px;
             color: #333;
         }
+
         #links ul {
             list-style-type: none;
             padding: 0;
         }
+
         #links ul li {
             background-color: #f0f0f0;
             margin: 15px 0;
@@ -139,6 +203,7 @@
             text-align: center;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
+
         #links ul li a {
             color: #333;
             text-decoration: none;
@@ -146,11 +211,37 @@
             display: block;
             padding: 8px;
         }
+
         #links ul li a:hover {
             color: #fff;
             background-color: #007bff;
             padding: 12px;
             border-radius: 5px;
+        }
+
+        /* Zurück zum Anfang Button */
+        #scrollToTop {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 1.5em;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none; /* Anfangs nicht sichtbar */
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        #scrollToTop:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+        }
+
+        #scrollToTop:focus {
+            outline: none;
         }
 
         /* Responsive Styles */
@@ -159,15 +250,19 @@
                 width: 60px;
                 left: 15px;
             }
+
             nav a {
                 padding: 12px 18px;
             }
+
             .content {
                 padding: 20px 30px;
             }
+
             .category {
                 padding: 15px;
             }
+
             #links h2 {
                 font-size: 2em;
             }
@@ -179,7 +274,7 @@
 
 <header>
     <img src="YNYB Logo.png" alt="Logo">
-    <h1>Welcome to the YNBN Website</h1>
+    <h1>Welcome to the YNYB Website</h1>
 </header>
 
 <nav>
@@ -256,6 +351,9 @@
     </ul>
 </div>
 
+<!-- Zurück zum Anfang Button -->
+<button id="scrollToTop" title="Back to Top">↑</button>
+
 <script>
     const navLinks = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('.content');
@@ -274,8 +372,27 @@
     });
 
     document.getElementById('home').classList.add('active');
+
+    // Zurück zum Anfang Button
+    const scrollToTopButton = document.getElementById("scrollToTop");
+
+    // Zeige den Button, wenn der Benutzer 100px nach unten scrollt
+    window.onscroll = function() {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            scrollToTopButton.style.display = "block";
+        } else {
+            scrollToTopButton.style.display = "none";
+        }
+    };
+
+    // Beim Klicken auf den Button nach oben scrollen
+    scrollToTopButton.addEventListener("click", function() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
 </script>
 
 </body>
 </html>
-
