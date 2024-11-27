@@ -266,6 +266,35 @@
             #links h2 {
                 font-size: 2em;
             }
+            #Rules {
+    background-color: #fff8e1; /* Helle Hintergrundfarbe für den Rules-Bereich */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px 40px;
+    border-radius: 10px;
+    animation: fadeInUp 1s ease-out forwards; /* Animation */
+}
+
+#Rules p {
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    margin: 10px 0;
+    padding: 12px;
+    font-size: 1.1em;
+    line-height: 1.6;
+    transition: background-color 0.3s ease;
+}
+
+#Rules p:hover {
+    background-color: #e6e6e6;
+}
+
+#Rules p::before {
+    content: '\2022'; /* Bullet-Point für jeden Paragraphen */
+    font-size: 2em;
+    color: #d9534f;
+    margin-right: 10px;
+}
+
         }
     </style>
 </head>
@@ -354,12 +383,24 @@
 
 <div class="content" id="Rules">
     <h2>Rules</h2>
-    <p>1. Be Respectful: Treat everyone with kindness and respect. Harassment, hate speech, or discrimination will not be tolerated.</p>
-    <p>2. No Spamming: Avoid spamming messages, links, or emojis in the chat. Keep the conversation meaningful and respectful.</p>
-    <p>3. Stay on Topic: Please make sure your messages are relevant to the channel you’re in. Use the appropriate channels for different discussions.</p>
-    <p>4. No Advertising: Do not promote other servers, products, or services without permission from the staff team.</p>
-    <p>5. Listen to Staff: Follow the instructions of the server moderators and admins. They are here to ensure a safe and enjoyable environment for everyone.</p>
-    <p>6. Have Fun: Enjoy your time on the server and contribute to a positive atmosphere!</p>
+    <div class="rule">
+        <i class="fas fa-handshake"></i> Be Respectful: Treat everyone with kindness and respect.
+    </div>
+    <div class="rule">
+        <i class="fas fa-ban"></i> No Spamming: Avoid spamming messages, links, or emojis.
+    </div>
+    <div class="rule">
+        <i class="fas fa-comments"></i> Stay on Topic: Please ensure your messages are relevant.
+    </div>
+    <div class="rule">
+        <i class="fas fa-ad"></i> No Advertising: Don’t promote other servers or products.
+    </div>
+    <div class="rule">
+        <i class="fas fa-user-shield"></i> Listen to Staff: Follow the instructions of the staff.
+    </div>
+    <div class="rule">
+        <i class="fas fa-smile"></i> Have Fun: Enjoy your time and contribute to a positive atmosphere!
+    </div>
 </div>
 
 
